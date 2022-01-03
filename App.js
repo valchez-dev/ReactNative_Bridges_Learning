@@ -1,9 +1,13 @@
 import React from 'react';
-import {Button, StyleSheet, View} from 'react-native';
+import { NativeModules, Button, StyleSheet, View} from 'react-native';
+
+//Android Toast Bridge Access
+const {ToastModule} = NativeModules;
 
 const App = () => {
+
   const showToastHandler = () => {
-    //show native android Toast
+    ToastModule.showToast("Hello, it's a native Android message!")
   };
 
   return (
